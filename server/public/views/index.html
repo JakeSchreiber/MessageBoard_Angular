@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Marvelous Angular Message Board</title>
+
+    <link rel="stylesheet" href="../assets/scripts/style.css">
+    <!--<link rel="stylesheet" href="../vendors/bootstrap.min.css">-->
+    <script type="text/javascript" src="../vendors/angular.min.js"></script>
+    <script type="text/javascript" src="../assets/scripts/app.js"></script>
+</head>
+<body>
+ <div id="mainContainer" ng-controller="WelcomeController">
+    <h1>Message Board</h1>
+    <form id="messageInput">
+        <textarea ng-model="note.name" type="text" maxlength="50" class="name" id="name" name="name" placeholder="Enter Name:"></textarea>
+        <textarea ng-model="note.message" type="text" maxlength="500" class="message" id="message" name="message" placeholder="Enter Message: (5,000 character max)"></textarea>
+    </form>
+     <button ng-click="clickButton(note)" class="button">Submit Message</button>
+
+
+
+    <div ng-repeat="message in nameArray">
+        <p class="messageTag">{{message.message}}</p>
+        <p class="nameTag">-{{message.name}}</p>
+    </div>
+
+ </div>
+
+</body>
+</html>
